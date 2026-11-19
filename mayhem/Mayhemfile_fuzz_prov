@@ -1,0 +1,9 @@
+project: savantenvs/esp-now
+target: fuzz_prov
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_prov/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/build/fuzz_prov
+    libfuzzer: true
+    timeout: 10
